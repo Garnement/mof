@@ -14,12 +14,12 @@ class CreateCandidateMasterTable extends Migration
     public function up()
     {
         Schema::create('candidate_master', function(Blueprint $table){
-            $table->integer('candidate_id')->unsigned();
-            $table->integer('master_id')->unsigned();
+            $table->integer('candidate_id')->unsigned()->nullable();
+            $table->integer('master_id')->unsigned()->nullable();
 
             #Foreign Key 
-            $table->foreign('candidate_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('master_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('candidate_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('master_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 

@@ -33,63 +33,63 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 // Fakers pour les établissements (Establishment)
 $factory->define(App\Establishment::class, function(Faker\Generator $faker){
-    
+
     return [
-        'establishment_name'    => $faker->streetName,
-        'address'               => $faker->streetAddress,
-        'city'                  => $faker->city,
-        'zip_code'              => $faker->buildingNumber,
-        'phone'                 => $faker->phonenumber,
-        'email'                 => $faker->unique()->safeEmail,
-        'manager_lastName'      => $faker->lastName,
-        'manager_firstName'     => $faker->firstName($gender = null|'male'|'female'),
-        'department_id'         => rand(1, 101)
+        'establishment_name'                  => $faker->streetName,
+        'establishment_address'               => $faker->streetAddress,
+        'establishment_city'                  => $faker->city,
+        'establishment_zip_code'              => $faker->buildingNumber,
+        'establishment_phone'                 => $faker->phonenumber,
+        'establishment_email'                 => $faker->unique()->safeEmail,
+        'establishment_manager_lastName'      => $faker->lastName,
+        'establishment_manager_firstName'     => $faker->firstName($gender = null|'male'|'female'),
+        'department_id'                       => rand(1, 101)
     ];
 
 });
 // Fakers pour les entreprises (Companies)
 $factory->define(App\Company::class, function(Faker\Generator $faker){
-    
+
     return [
-        'company_name'           => $faker->streetName,
-        'address'                => $faker->streetAddress,
-        'city'                   => $faker->city,
-        'zip_code'               => $faker->buildingNumber,
-        'phone'                  => $faker->phonenumber,
-        'email'                  => $faker->unique()->safeEmail,
-        'manager_lastName'       => $faker->lastName,
-        'manager_firstName'      => $faker->firstName($gender = null|'male'|'female'),
-        'department'             => rand(1, 101)
+        'company_name'                   => $faker->streetName,
+        'company_address'                => $faker->streetAddress,
+        'company_city'                   => $faker->city,
+        'company_zip_code'               => $faker->buildingNumber,
+        'company_phone'                  => $faker->phonenumber,
+        'company_email'                  => $faker->unique()->safeEmail,
+        'company_manager_lastName'       => $faker->lastName,
+        'company_manager_firstName'      => $faker->firstName($gender = null|'male'|'female'),
+        'department'                     => rand(1, 101)
     ];
 
 });
 
 // Fakers pour les profils (Profiles)
-$factory->define(App\Profile::class, function(Faker\Generator $faker){
+// $factory->define(App\Profile::class, function(Faker\Generator $faker){
+//
+//     $apprentice = [true, false];
+//     $rand = array_rand($apprentice);
+//
+//     $statut = ['completed', 'uncompleted'];
+//     $rand2 = array_rand($statut);
+//
+//     $gender = ['mr', 'mme'];
+//     $rand3 = array_rand($gender);
+//
+//     return [
+//         'profile_adress'                => $faker->streetAddress,
+//         'profile_phone'                 => $faker->phonenumber,
+//         'profile_birthdate'             => $faker->creditCardExpirationDate,
+//         'profile_city'                  => $faker->city,
+//         'profile_file_attach'           => str_random(10),
+//         'inscription_number'            => rand(1000000, 9999999),
+//         'profile_statut'                => $statut[$rand2],
+//         'gender'                        => $gender[$rand3],
+//         'apprenticeship'                => $apprentice[$rand]
+//       ];
+// });
 
-    $apprentice = [true, false];
-    $rand = array_rand($apprentice);
-
-    $statut = ['completed', 'uncompleted'];
-    $rand2 = array_rand($statut);
-
-    $gender = ['mr', 'mme'];
-    $rand3 = array_rand($gender);
-
-    return [
-        'adress'                => $faker->streetAddress,
-        'phone'                 => $faker->phonenumber,
-        'birthdate'             => $faker->creditCardExpirationDate,
-        'city'                  => $faker->city,
-        'file_attach'           => str_random(10),
-        'inscription_number'    => rand(1000000, 9999999),
-        'statut'                => $statut[$rand2],
-        'gender'                => $gender[$rand3],
-        'apprenticeship'        => $apprentice[$rand]
-      ];
-});
-
-$factory->define(App\Profile::class, function(Faker\Generator $faker){
+$factory->define(App\Speciality::class, function(Faker\Generator $faker){
 
     return [
         'speciality_name' => $faker->jobTitle,

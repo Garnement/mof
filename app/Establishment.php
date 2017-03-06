@@ -26,3 +26,4 @@ class Establishment extends Model
             ->orderBy('name');
     }
 }
+    

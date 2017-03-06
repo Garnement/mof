@@ -27,32 +27,32 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function roles() 
+    public function roles()
     {
         return $this->hasMany(Role::class);
     }
 
-    public function medal() 
+    public function medal()
     {
         return $this->belongsTo(Medal::class);
     }
 
-    public function specialities() 
+    public function speciality()
     {
-        return $this->hasMany(Speciality::class);
+        return $this->hasOne(Speciality::class);
     }
 
-    public function establishments() 
+    public function establishments()
     {
         return $this->belongsToMany(Establishment::class);
     }
 
-    public function companies() 
+    public function companies()
     {
         return $this->belongsToMany(Company::class);
     }
 
-    public function user() 
+    public function user()
     {
         return $this->hasOne(Role::class);
     }
@@ -70,5 +70,10 @@ class User extends Authenticatable
    public function profile()
    {
        return $this->belongsTo(Profile::class);
+   }
+
+   public function certificates()
+   {
+     return $this->belongsToMany(Certificate::class);
    }
 }

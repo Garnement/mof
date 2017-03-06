@@ -30,6 +30,9 @@ class UsersTableSeeder extends Seeder
             //On relie une entreprise à un candidat
             $user->companies()->attach(rand(1,20));
 
+
+            $user->type == 'candidate' ? $user->speciality_id = rand(1,20) : null;
+
             $apprentice = [true, false];
             $rand = array_rand($apprentice);
 
@@ -41,20 +44,29 @@ class UsersTableSeeder extends Seeder
 
             $profile =  \App\Profile::create(
                 [
-                    'adress'                => $this->faker->streetAddress,
-                    'phone'                 => $this->faker->phonenumber,
-                    'birthdate'             => $this->faker->creditCardExpirationDate,
-                    'city'                  => $this->faker->city,
-                    'zip_code'              => $this->faker->buildingNumber,
-                    'file_attach'           => str_random(10),
-                    'inscription_number'    => rand(1000000, 9999999),
-                    'statut'                => $statut[$rand2],
-                    'gender'                => $gender[$rand3],
-                    'apprenticeship'        => $apprentice[$rand]
+                    'profile_adress'                => $this->faker->streetAddress,
+                    'profile_phone'                 => $this->faker->phonenumber,
+                    'profile_birthdate'             => $this->faker->creditCardExpirationDate,
+                    'profile_city'                  => $this->faker->city,
+                    'profile_zip_code'              => $this->faker->buildingNumber,
+                    'profile_file_attach'           => str_random(10),
+                    'inscription_number'            => rand(1000000, 9999999),
+                    'profile_statut'                => $statut[$rand2],
+                    'gender'                        => $gender[$rand3],
+                    'apprenticeship'                => $apprentice[$rand]
                 ]
             );
 
-            $user->profile_id = $profile->id;
+            $user->type == 'candidate' ? $user->profile_id = $profile->id : null;
+
+            $certificates =  \App\Certificate::create(
+                [
+                    'certificate_name'              => 'BEP',
+                    'qualify'                       => rand(1,2)
+                ]
+            );
+
+            $user->type == 'candidate' ? $user->certificates()->attach([$certificates->id]) : null;
 
             $user->save();
 
@@ -91,15 +103,15 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $superEsta = App\Establishment::create([
-                'establishment_name'    => 'super establishment',
-                'address'               => $this->faker->streetAddress,
-                'city'                  => $this->faker->city,
-                'zip_code'              => $this->faker->buildingNumber,
-                'phone'                 => $this->faker->phonenumber,
-                'email'                 => $this->faker->unique()->safeEmail,
-                'manager_lastName'      => $this->faker->lastName,
-                'manager_firstName'     => $this->faker->firstName($gender = null|'male'|'female'),
-                'department_id'         => 76
+                'establishment_name'                  => 'super establishment',
+                'establishment_address'               => $this->faker->streetAddress,
+                'establishment_city'                  => $this->faker->city,
+                'establishment_zip_code'              => $this->faker->buildingNumber,
+                'establishment_phone'                 => $this->faker->phonenumber,
+                'establishment_email'                 => $this->faker->unique()->safeEmail,
+                'establishment_manager_lastName'      => $this->faker->lastName,
+                'establishment_manager_firstName'     => $this->faker->firstName($gender = null|'male'|'female'),
+                'department_id'                       => 76
         ]);
 
         $master->establishments()->sync([$superEsta->id]);

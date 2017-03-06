@@ -12,11 +12,11 @@ class MedalsTableSeeder extends Seeder
     public function run()
     {
         DB::table('medals')->insert([
-            ['type' => 'gold'],
-            ['type' => 'silver'],
-            ['type' => 'bronze'],
-            ['type' => 'away'],
-            ['type' => 'none']
+            ['medal_type' => 'gold'],
+            ['medal_type' => 'silver'],
+            ['medal_type' => 'bronze'],
+            ['medal_type' => 'away'],
+            ['medal_type' => 'none']
 
         ]);
     }

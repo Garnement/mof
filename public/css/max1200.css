@@ -1,0 +1,29 @@
+@media screen and (max-width: 1200px)
+{
+
+.jobsleft {
+    flex-direction: row;
+    margin-right: 0%;
+    margin-bottom: 2%;
+}
+.maquillage, .sculpture {
+  width: 100%;
+  bottom: 0%;
+  left: 0%;
+}
+
+.event {
+  width: 100%;
+  bottom: -80%;
+  left: 0%;
+}
+
+.figsculpture {
+  margin-top: 0%;
+}
+
+.jobsrightup {
+  margin-bottom: 20%;
+}
+
+}

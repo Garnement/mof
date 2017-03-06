@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return App\Region::first()->region_name;
-});
+// Route::get('/', function () {
+//     return App\Region::first()->region_name;
+// });
+
+Route::get('/', 'FrontController@index')->name('home');

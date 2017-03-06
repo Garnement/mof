@@ -15,7 +15,7 @@ class CreateMedalsTable extends Migration
     {
         Schema::create('medals', function(Blueprint $table){
             $table->increments('id');
-            $table->enum('type', ['gold', 'silver', 'bronze', 'away', 'none']);
+            $table->enum('medal_type', ['gold', 'silver', 'bronze', 'away', 'none']);
         });
     }
 

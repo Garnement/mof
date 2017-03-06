@@ -14,12 +14,12 @@ class CreateEstablishmentUserTable extends Migration
     public function up()
     {
         Schema::create('establishment_user', function(Blueprint $table){
-            $table->integer('establishment_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->integer('establishment_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
 
             #Foreign Key 
-            $table->foreign('establishment_id')->references('id')->on('establishments')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('establishment_id')->references('id')->on('establishments')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 

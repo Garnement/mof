@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecialitiesTable extends Migration
+class CreateCertificatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSpecialitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('specialities', function(Blueprint $table){
+        Schema::create('certificates', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('speciality_name');
-            $table->string('speciality_code', 15);
+            $table->string('certificate_name', 100);
+            $table->enum('qualify', ['completed', 'uncompleted']);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateSpecialitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specialities');
+        Schema::dropIfExists('certificates');
     }
 }
