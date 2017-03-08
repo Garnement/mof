@@ -1,11 +1,55 @@
 @extends('layouts.master')
 
 @section('content')
-   <section>
-      <div class="container">
-          <h1 class="subtitle fancy"><span>Actus a la une</span></h1>
-          <div class="row wrapperslider">
-            <span id="slider-next"></span>
+<section id="knowus">
+  <div class="container">
+    <h1 class="border"><span>Nous connaître</span></h1>
+    <div class="row number">
+      <div class="col-md-3 col-xs-6">
+        <p>1632</p>
+        <p>médaillés</p>
+        <p>meilleurs apprentis</p>
+      </div>
+
+      <div class="col-md-3 col-xs-6">
+        <p>3200</p>
+        <p>médaillés</p>
+        <p>meilleurs ouvriers</p>
+      </div>
+
+      <div class="col-md-3 col-xs-6">
+        <p>3500</p>
+        <p>inscrits</p>
+        <p>chaque année en france</p>
+      </div>
+
+      <div class="col-md-3 col-xs-6">
+        <p>200</p>
+        <p>médaillés</p>
+        <p>représentés chaque année</p>
+      </div>
+    </div>
+
+    <div class="row text-col">
+      <div class="col-md-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <div class="col-md-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+    </div> <!-- /row text-col-->
+    <div class="row text-center">
+      <a href ="" class="btna">En savoir plus</a>
+    </div>
+</section>
+
+<section>
+  <div class="container">
+    <h1 class="border"><span>Actus a la une</span></h1>
+  </div>
+  <div class="container-fluid">
+        <div class="row wrapperslider">
+          <span id="slider-next"></span>
             <ul class="bxslider">
                 <li><a href="">
                   <figure class="newsslide">
@@ -20,7 +64,7 @@
                   <figure class="newsslide">
                         <img src="img/slide_right.jpg" alt="">
                         <figcaption>
-                          <p class="figfirstline" data-value="left">Cérémonie des remises de récompenses aux lauréats</p>
+                          <p>Cérémonie des remises de récompenses aux lauréats</p>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </figcaption>
                       </figure></a>
@@ -35,7 +79,7 @@
                 <a href="#" class="btna">Voir toutes les actualités</a>
            </div>
          </div>
-      </div>
+      </div> <!-- /container -->
     </section>
 
 

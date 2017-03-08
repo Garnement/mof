@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
             $user->companies()->attach(rand(1,20));
 
 
-            $user->type == 'candidate' ? $user->speciality_id = rand(1,20) : null;
+            $user->type == 'candidate' ? $user->speciality_id = rand(1,15) : null;
 
             $apprentice = [true, false];
             $rand = array_rand($apprentice);
@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder
 
             $profile =  \App\Profile::create(
                 [
-                    'profile_adress'                => $this->faker->streetAddress,
+                    'profile_address'                => $this->faker->streetAddress,
                     'profile_phone'                 => $this->faker->phonenumber,
                     'profile_birthdate'             => $this->faker->creditCardExpirationDate,
                     'profile_city'                  => $this->faker->city,
@@ -122,6 +122,7 @@ class UsersTableSeeder extends Seeder
 
         $specialUser->name ='Super candidate';
         $specialUser->type = 'candidate';
+        $specialUser->speciality_id = 2;
 
         $specialUser->establishments()->sync([$superEsta->id]);
 

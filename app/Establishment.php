@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Establishment extends Model
 {
-    public function department() 
+    public function department()
     {
         return $this->belongsTo(Department::class);
     }
@@ -26,4 +26,3 @@ class Establishment extends Model
             ->orderBy('name');
     }
 }
-    

@@ -16,3 +16,16 @@
 // });
 
 Route::get('/', 'FrontController@index')->name('home');
+
+Route::get('/inscription', 'FrontController@inscription')->name('inscription');
+
+Route::any('/login', 'LoginController@login')->name('login');
+
+Route::any('/logout', 'LoginController@logout')->name('logout');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+
+    Route::get('candidates', 'admin\CandidateController@index');
+    Route::resource('candidates', 'admin\CandidateController');
+    //Route::get('category/{id}', 'DashboardController@questionsByCat')->name('cat');
+});

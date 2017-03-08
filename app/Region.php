@@ -17,7 +17,7 @@ class Region extends Model
         return $this->hasManyThrough(Establishment::class, Department::class);
     }
 
-    public function allUsers(string $type='candidate')
+    public function allUsers(string $type)
     {
       $data = [];
 

@@ -64,31 +64,6 @@ $factory->define(App\Company::class, function(Faker\Generator $faker){
 
 });
 
-// Fakers pour les profils (Profiles)
-// $factory->define(App\Profile::class, function(Faker\Generator $faker){
-//
-//     $apprentice = [true, false];
-//     $rand = array_rand($apprentice);
-//
-//     $statut = ['completed', 'uncompleted'];
-//     $rand2 = array_rand($statut);
-//
-//     $gender = ['mr', 'mme'];
-//     $rand3 = array_rand($gender);
-//
-//     return [
-//         'profile_adress'                => $faker->streetAddress,
-//         'profile_phone'                 => $faker->phonenumber,
-//         'profile_birthdate'             => $faker->creditCardExpirationDate,
-//         'profile_city'                  => $faker->city,
-//         'profile_file_attach'           => str_random(10),
-//         'inscription_number'            => rand(1000000, 9999999),
-//         'profile_statut'                => $statut[$rand2],
-//         'gender'                        => $gender[$rand3],
-//         'apprenticeship'                => $apprentice[$rand]
-//       ];
-// });
-
 $factory->define(App\Speciality::class, function(Faker\Generator $faker){
 
     return [
